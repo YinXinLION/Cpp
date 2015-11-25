@@ -1,5 +1,5 @@
-<strong＞String的操作</strong>
-
+String的操作
+====
 os << s        将s写到输出流os当中，返回os
 is >> s        从s中读取字符串赋给s,字符串以空白分隔，返回is
 getline(is ,s) 从is中读取一行赋给s，返回is
