@@ -27,7 +27,7 @@ s1!=s2
 <,<=,>,>=      利用字符在字典中的顺序进行比较,且对字母的大小写敏感
 
 1.c
-`
+```
 int main()
 {
 　　　string s;
@@ -35,7 +35,7 @@ int main()
    cout << s << endl;
    return 0;
 ｝
-`
+```
 string对象会自动忽略开头空白(即空格符,换行符,制表符等)并从第一个真正的字符开始读起，知道遇见下一个空白为止．<br>
 输入：＂　　HELLO C++!＂<br>
 =>     HELLO<br>
@@ -65,6 +65,31 @@ vector<int>  v1(10);//v1有10个元素,每个的值都是0<br>
 vector<int>  v2{10};//v2有1个元素,该元素的值是10<br>
 vector<int>  v3(10,1);//v3有10个元素,每个的值都是1<br>
 vector<int>  v4{10,1};//v4有2个元素,值分别为10和1<br>
+
+迭代器
+----
+1.其对象是容器中的元素或者string对象中的字符.<br>
+2.如果容器为空,则begin和end返回的是同一个迭代器,都是尾后迭代器.<br>
+3.end返回的迭代器并不指示某个元素,不能递增和解引用操作.<br>
+```
+vector<int>::iterator it; //it 能读写vector<int>的元素
+string::iterator it2; //it2能读写string对象中的字符
+
+vector<int>::const_iterator it3;//it3只能读元素,不能写元素
+string::const_iterator it4;//it4只能读字符,不能写字符
+
+vector<int> v
+auto it3 = v.cbegin(); //it3的类型是vector<int>::const_iterattor
+```
+(*it).empty()含义是先对it解引用,然后解引用的结果再执行点运算符.
+```
+(*it).empty() ;  //解引用it,然后调用结果对象的empty成员
+*it.emoty();   //错误,试图访问it的名为empty的成员,it是一个迭代器,没有empty成员
+```
+使改vector对象的迭代器失效(注意)
+1.不能再范围for循环中向vector对象添加元素.
+2.任何一种可能改变vector对象容量的操作,比如push_back.
+!!!(使用了迭代器的循环体,都不要向迭代器所属的容器添加元素)
 
 
 
