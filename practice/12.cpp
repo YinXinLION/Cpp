@@ -20,9 +20,19 @@ using namespace std;
 template <typename T, typename F>
 T run(T v, F f)
 {
+    static int cout = 0;
+    cout++;
+    if(cout >1)
+    {
+        return 0;
+    }
     return f(v);
 }
 
+int cheng(int a, int b)
+{
+    return a*b;
+}
 int main(void)
 {
     double db = 10.23;
@@ -32,5 +42,8 @@ int main(void)
         return a;
     };
 
+    function<int(int, int)> fun2= cheng;
     cout << fun1(db) << endl;
+    cout << run(20, fun1) << endl;
+    cout << fun2(20,30) << endl;
 }
