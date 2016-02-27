@@ -22,7 +22,7 @@ int main(void)
     {
         cout << myvector[i] << endl;
     }
-    myvector.erase(myvector.begin() + 2 );
+    myvector.erase(myvector.begin() + 3 );
     cout << endl;
     for(int i = 0; i < myvector.size(); i++)
     {
