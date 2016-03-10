@@ -17,5 +17,5 @@ int main(void)
     vector<int> vec2{1,2,3,4,5};
     vector<int> vec3{1,2,3,4};
 
-    cout << std::vector<int>(li.begin(),li.end() == vec2 ? "true" : "false") << endl;
+    cout << vector<int>(li.begin(),li.end()) == vec2 ? "true" : "false" << endl;
 }
