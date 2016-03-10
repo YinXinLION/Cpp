@@ -13,7 +13,7 @@ using namespace std;
 int main(void)
 {
     list<string> input;
-    for(string str; cin >> str; input(str))
+    for(string str; cin >> str; input.push_back(str))
     {
         for(auto iter = input.cbegin(); iter != input.cend(); ++iter)
         cout << *iter << endl;
