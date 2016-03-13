@@ -33,7 +33,7 @@ class mycomplex
 
     }
 
-    friend ostream &operator << (ostream & out, mycomplex *Complex);
+    friend ostream &operator << (ostream & out, mycomplex &Complex);
 };
     ostream &operator << (ostream & out, mycomplex &Complex)
     {
