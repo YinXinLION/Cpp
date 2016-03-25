@@ -10,7 +10,10 @@
 #include<vector>
 using namespace std;
 
-
+//类模板可以直接继承类模板 但必须指明是那个类 子类并不晓得父类
+//普通类继承类模板，需要明确模板类型
+//类模板继承普通类，常规操作
+//
 class xyz
 {
     public:
